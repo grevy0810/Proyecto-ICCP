@@ -1,4 +1,3 @@
 print("hola")
 print("mundo")
-print("mundo")
-dfagfg
+ná de locos esto
