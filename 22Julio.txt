@@ -1,0 +1,8 @@
+Quedamos en
+
+Cultura general
+100 preguntas en total
+Máximo 20 preguntas
+Cada uno busca 50 preguntas
+La entrada de la opción será por teclado
+Preguntar cómo programar para validar la veracidad de las opciones en Python.
