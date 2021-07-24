@@ -1,3 +1,3 @@
-print("hola")
-print("mundo")
-ná de locos esto
+Difi= open('difcultades.txt', 'r')
+for linea in difi:
+    print linea
