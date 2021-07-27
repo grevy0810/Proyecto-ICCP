@@ -17,10 +17,10 @@ C. De 1917 a 1922.
 D. De 1939 a 1945.------------
 
 4. ¿Cuándo murió Freddie Mercury?
-En el año 1991.-------------
-En el año 1990.
-En el año 1992.
-En el año 1994.
+A. En el año 1991.-------------
+B. En el año 1990.
+C. En el año 1992.
+D. En el año 1994.
 
 5. ¿Cuál es el himno de la Unión Europea?
 A. Fur Elise.
@@ -30,10 +30,10 @@ D. Urians Reise
 
 
 6. ¿Cuál es el atleta con más medallas olímpicas?
-Michael Phelps.----------
-Larisa Latynina.
-Usain Bolt.
-Paavo Nurmi.
+A. Michael Phelps.----------
+B. Larisa Latynina.
+C. Usain Bolt.
+D. Paavo Nurmi.
 
 7. ¿Cuál fue la primera civilización humana?
 A. La civilización Egipcia.
@@ -104,9 +104,9 @@ D. El Río Magdalena.
 
 18. ¿Cuál es el primer libro de la biblia?
 A. El libro de Levítico.
-A. El libro de Números.
-A. El libro de Éxodo.
-A. El libro de Génesis.----------
+B. El libro de Números.
+C. El libro de Éxodo.
+D. El libro de Génesis.----------
 
 19. ¿Gracias a qué ganó Albert Einstein el Premio Nobel?
 A. Por la ley del efecto fotoeléctrico.--------
@@ -292,10 +292,10 @@ C. 16.
 D. 17.---------------
 
 50. ¿Cuál de estos paises no tiene frontera con Brasil?
-a. surinam.
-b. chile.------------
-c. uruguay.
-d. bolivia.
+A. surinam.
+B. chile.------------
+C. uruguay.
+D. bolivia.
 
 51. ¿en qué deporte el juego interrumpido se reanuda con un "scrum"? 
 A. hockey. 
