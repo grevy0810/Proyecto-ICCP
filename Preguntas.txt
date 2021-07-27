@@ -1,4 +1,4 @@
-﻿1. ¿Cuál es el país con menos habitantes del mundo?
+1. ¿Cuál es el país con menos habitantes del mundo?
 A. La Ciudad del Vaticano.-----
 B. San marino.
 C. Mónaco.
@@ -17,10 +17,10 @@ C. De 1917 a 1922.
 D. De 1939 a 1945.------------
 
 4. ¿Cuándo murió Freddie Mercury?
-En el año 1991.-------------
-En el año 1990.
-En el año 1992.
-En el año 1994.
+A. En el año 1991.-------------
+B. En el año 1990.
+C. En el año 1992.
+D. En el año 1994.
 
 5. ¿Cuál es el himno de la Unión Europea?
 A. Fur Elise.
@@ -30,10 +30,10 @@ D. Urians Reise
 
 
 6. ¿Cuál es el atleta con más medallas olímpicas?
-Michael Phelps.----------
-Larisa Latynina.
-Usain Bolt.
-Paavo Nurmi.
+A. Michael Phelps.----------
+B. Larisa Latynina.
+C. Usain Bolt.
+D. Paavo Nurmi.
 
 7. ¿Cuál fue la primera civilización humana?
 A. La civilización Egipcia.
@@ -45,7 +45,7 @@ D. La civilización persa.
 A. El hinduismo.
 B. El budismo.
 C. El cristianismo.
-D. El judaismo.--------
+D. El judaísmo.--------
 
 9. ¿Cuál es la luna más grande de Saturno?
 A. Mimas.
@@ -63,7 +63,7 @@ D. La tortuga.
 11. ¿Qué enfermedad provocó la muerte de Stephen Hawking?
 A. Esclerosis Lateral Amiotrófica.----
 B. Parkinson.
-C. Cancer.
+C. Cáncer.
 D. Sida.
 
 12. ¿Cuántos corazones tiene un gusano de tierra?
@@ -104,9 +104,9 @@ D. El Río Magdalena.
 
 18. ¿Cuál es el primer libro de la biblia?
 A. El libro de Levítico.
-A. El libro de Números.
-A. El libro de Éxodo.
-A. El libro de Génesis.----------
+B. El libro de Números.
+C. El libro de Éxodo.
+D. El libro de Génesis.----------
 
 19. ¿Gracias a qué ganó Albert Einstein el Premio Nobel?
 A. Por la ley del efecto fotoeléctrico.--------
@@ -130,8 +130,7 @@ B. La última cena.
 C. La noche estrellada.
 D. Salvator Mundi. -----------
  
-
-23. ¿Cuál es el nombre del pintor de la obra "La Guioconda"?
+23. ¿Cuál es el nombre del pintor de la obra "La Gioconda"?
 A. Leonardo da Vinci.-----------
 B. Pablo Picasso.
 C. Rembrandt
@@ -173,10 +172,10 @@ B. El Merapi.
 C. El Vesubio.------
 
 30. ¿Cuántas peliculas tiene la serie "Harry Potter"?
-A. 3 peliculas.
-B. 4 peliculas.
-C. 5 peliculas.
-D. 8 peliculas.-----
+A. 3 películas.
+B. 4 películas.
+C. 5 películas.
+D. 8 películas.-----
 
 
 31. ¿De qué país es originario el queso brie?
@@ -186,7 +185,7 @@ C. Noruega.
 D. España.
 
 
-32. ¿En qué año se estableció la compañia Heinz?
+32. ¿En qué año se estableció la compañía Heinz?
 A. 1869.------
 B. 1890.
 C. 1894.
@@ -195,7 +194,7 @@ D. 1860.
 33. ¿Cuál es la capital de Islandia?
 A. Oslo.
 B. Reikiavik.------
-C. Amsterdam.
+C. Ámsterdam.
 D. Madrid.
 
 34. ¿En qué año murió Margaret Thatcher?
@@ -240,7 +239,7 @@ B. Riad.
 C. Buenos Aires.
 D. Argel.
 
-41. ¿En la rodilla se encuentra el ligamento cruzado. ¿Verdadero o falso?
+41. En la rodilla se encuentra el ligamento cruzado. ¿Verdadero o falso?
 A. Verdadero.------
 B. Falso.
 
@@ -250,7 +249,7 @@ B. Krone.--------
 C. Yen.
 D. Libra esterlina.
 
-4. ¿En qué país europeo encontrarías el Rijksmuseum?
+43. ¿En qué país europeo encontrarías el Rijksmuseum?
 A. Grecia.
 B. Suiza.
 C. Paises Bajos.-----------
@@ -292,11 +291,11 @@ B. 15.
 C. 16.
 D. 17.---------------
 
-50. ¿Cuál de estos paises no tiene frontera con Brasil?
-a. surinam.
-b. chile.------------
-c. uruguay.
-d. bolivia.
+50. ¿Cuál de estos países no tiene frontera con Brasil?
+A. Surinam.
+B. Chile.------------
+C. Uruguay.
+D. Bolivia.
 
 51. ¿en qué deporte el juego interrumpido se reanuda con un "scrum"? 
 A. hockey. 
@@ -304,13 +303,12 @@ B. rugby.--------------
 C. béisbol. 
 D. waterpolo.
 
-
 52. ¿quién era el padre de los dioses en la mitología nórdica?
 A. thor.
 B. loki.
 C. odin.----------
 D. balder.
 
-53. ¿El precuneo se encuentra en el lóbulo parietal superior. ¿Verdadero o Falso?
+53. El precuneo se encuentra en el lóbulo parietal superior. ¿Verdadero o Falso?
 A. Verdadero.----------
 B. Falso.
