@@ -108,10 +108,45 @@ RespuestasBanco = ["A. La Ciudad del Vaticano.\n""B. San marino.\n""C. Mónaco.\
                    "A. hockey.\n""B. rugby.\n""C. béisbol.\n""D. waterpolo.\n",
                    "A. thor.\n""B. loki.\n""C. odin.\n""D. balder.\n",
                    "A. Verdadero.\n""B. Falso.\n"]
-RespuestaCorrecta = ["A", "A", "D", "A", "C", "A"]
+
+RespuestaCorrecta = ["A", "A", "D", "A", "C", "A", "B", "D", "E", "B",
+                     "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+                     "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+                     "A", "A", "B", "C", "D", "A", "B", "C", "D", "A",
+                     "A", "B", "C", "A", "D", "B", "A", "B", "D", "B",
+                     "B", "C", "A"]
 
 
-print itr(1,1,0.25,0)
+menu = """Bienvenido a la prueba adaptativa computarizada de cultura general. 
+
+Esta prueba se adapta a tú nivel de conocimientos!!
+Tiene un máximo de 20 preguntas, pero pueden ser menos dependiendo de tus tus respuestas y
+no tiene tiempo limite.
+¿Estas preparado para la prueba?.
+
+Este es el menú de inicio.
+
+1. Realizar prueba.
+2. puntuaciones.
+3. Información sobre el programa y la prueba.
+4. Salir. 
+
+"""
+
+print (menu)
+
+opcion = input('Digita del 1 al 3 la opción que desea realizar.')
+
+if opcion == '1':
+    pass
+elif opcion == '2':
+    pass
+elif opcion == '3':
+    pass
+elif opcion == '4':
+    pass
+else:
+    print ('Debes digitar una opción entre 1 y 4')
 archivo1.close()
 archivo2.close()
 archivo3.close()
