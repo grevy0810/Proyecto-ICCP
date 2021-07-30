@@ -2,10 +2,37 @@
 # -*- coding: utf-8 -*-
 
 import math
+import random
 
-def itr(a, b, c, x):
-    ModelLog3 = c + (1-c)/(1+math.exp(-a*(x-b)))
-    return ModelLog3
+def itr(dis, dif, azar, x):
+
+    a = float(dis)
+    b = float(dif)
+    c = float(azar)
+    itr3lp = c + (1-c)/(1+math.exp(-a*(x-b)))
+    return itr3lp
+
+def informacionITR(resulItr,dis,azar):
+    itr = float(resulItr)
+    a = float(dis)
+    c = float(azar)
+
+    info = (pow(a, 2))*((1-itr)/itr)*pow((itr-c)/(1-c), 2)
+    return info
+
+def VeriRespuest(Respuesta, indice):
+    entrada = Respuesta.capitalize()
+
+
+    if entrada == RespuestaCorrecta[indice]:
+        return True
+    else:
+        return False
+
+def PrintPregunt(idx):
+    index = int(idx)
+    print (BancoPreguntas[index])
+    print (RespuestasBanco[index])
 
 archivo1 = open('Dificultades.txt', 'r')
 valorDifi = archivo1.readlines()
@@ -15,17 +42,6 @@ valorDiscri = archivo2.readlines()
 
 archivo3 = open('Azar.txt', 'r')
 valorAzar = archivo3.readlines()
-
-conocimiento = 0
-
-Dificultad={}
-Discriminante={}
-Azar={}
-
-for i in range(0, 6):
-    Dificultad[i] = valorDifi[i]
-    Discriminante[i] = valorDiscri[i]
-    Azar[i] = valorAzar[i]
 
 BancoPreguntas = ["¿Cuál es el país con menos habitantes del mundo?\n", "¿En qué año cayó el muro de Berlín?\n",
                   "¿Cuándo empezó y terminó la Segunda Guerra Mundial?\n", "¿Cuándo murió Freddie Mercury?\n",
@@ -135,8 +151,8 @@ Este es el menú de inicio.
 
 print (menu)
 
-opcion = input('Digita del 1 al 3 la opción que desea realizar.')
-
+"""opcion = input('Digita del 1 al 3 la opción que desea realizar.')"""
+"""
 if opcion == '1':
     pass
 elif opcion == '2':
@@ -146,7 +162,66 @@ elif opcion == '3':
 elif opcion == '4':
     pass
 else:
-    print ('Debes digitar una opción entre 1 y 4')
+    print ('Debes digitar una opción entre 1 y 4')"""
+
+Deltha = 0
+difiProm = "0.0\n"
+opcion = []
+cont = 0
+
+for j in valorDifi:
+
+    if difiProm == j:
+        opcion.append(valorDifi.index(j, cont, len(valorDifi)))
+
+    cont += 1
+
+opcionInicial= random.randint(0, len(opcion))
+
+PrintPregunt(opcion[opcionInicial])
+UsuarioResp = raw_input()
+
+Correct = VeriRespuest(UsuarioResp, opcion[opcionInicial])
+
+if Correct == True:
+    Deltha+=0.2
+else:
+    Deltha-=0.2
+
+PreguntasRespond = []
+for k in range(0, 15):
+
+    ResultITR = []
+    for i in range(0, len(valorDifi)):
+        ResultITR.append(itr(valorDiscri[i], valorDifi[i], valorAzar[i], Deltha))
+
+    infoITR = []
+    for j in range(0, len(ResultITR)):
+        infoITR.append(informacionITR(ResultITR[j], valorDiscri[j], valorAzar[j]))
+
+    for k in PreguntasRespond:
+        infoITR[k]=0
+    print infoITR
+    max_value = None
+    max_index = None
+    for idx, num in enumerate(infoITR):
+        if (max_value is None or num > max_value):
+            max_value = num
+            max_index = idx
+
+    PreguntasRespond.append(max_index)
+    PrintPregunt(max_index)
+
+    UsuarioResp = raw_input()
+    Correct = VeriRespuest(UsuarioResp, max_index)
+
+    if Correct == True:
+        Deltha+=0.2
+    else:
+        Deltha-=0.2
+
+    print Deltha
+
 archivo1.close()
 archivo2.close()
 archivo3.close()
