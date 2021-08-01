@@ -22,11 +22,13 @@ def informacionITR(resulItr, dis, azar):
     info = (pow(a, 2))*((1-itr)/itr)*pow((itr-c)/(1-c), 2)
     return info
 
+
 def GuardarCambios(archivo, valores):
     archivo1 = open(archivo, 'w')
     archivo1_contents = "".join(valores)
     archivo1.write(archivo1_contents)
     archivo1.close()
+
 
 def CambioDificul(index):
 
@@ -218,7 +220,7 @@ RespuestaCorrecta = ["A", "A", "D", "A", "C", "A", "B", "D", "E", "B",
 menu = """Bienvenido a la prueba adaptativa computarizada de cultura general. 
 
 Esta prueba se adapta a tú nivel de conocimientos!!
-Tiene un máximo de 15 preguntas, pero pueden ser menos dependiendo de tus tus respuestas y
+Tiene un máximo de 15 preguntas, pero pueden ser menos dependiendo de tus respuestas y
 no tiene tiempo limite.
 ¿Estas preparado para la prueba?.
 
@@ -226,17 +228,17 @@ Este es el menú de inicio.
 
 1. Realizar prueba.
 2. puntuaciones.
-3. Información sobre el programa y la prueba.
-4. Salir. 
+3. Salir. 
 
 """
 
-print (menu)
+
 
 eleccion = 0
-while eleccion != '4':
+while eleccion != '3':
 
-    eleccion = raw_input('Digita del 1 al 4 la opción que desea realizar.\n')
+    print (menu)
+    eleccion = raw_input('Digita del 1 al 3 la opción que desea realizar.\n')
     if eleccion == '1':
 
         name = raw_input('¿Cuál es su nombre?\n')
@@ -331,10 +333,10 @@ while eleccion != '4':
         my_puntuacion.close()
 
         print (puntuaciones)
+
     elif eleccion == '3':
-        print ('info')
-    elif eleccion == '4':
-        print ('Salir')
+        print ('Fin del Programa. ')
     else:
-        print ('Debes digitar una opción entre 1 y 4')
+        print ('Debes digitar una opción entre 1 y 3\n')
+
 
