@@ -4,6 +4,7 @@
 import math
 import random
 
+
 def itr(dis, dif, azar, x):
 
     a = float(dis)
@@ -12,7 +13,8 @@ def itr(dis, dif, azar, x):
     itr3lp = c + (1-c)/(1+math.exp(-a*(x-b)))
     return itr3lp
 
-def informacionITR(resulItr,dis,azar):
+
+def informacionITR(resulItr, dis, azar):
     itr = float(resulItr)
     a = float(dis)
     c = float(azar)
@@ -20,19 +22,90 @@ def informacionITR(resulItr,dis,azar):
     info = (pow(a, 2))*((1-itr)/itr)*pow((itr-c)/(1-c), 2)
     return info
 
-def VeriRespuest(Respuesta, indice):
+
+def CambioDificul(index):
+
+    if float(valorDifi[index]) > Deltha and Correct == True:
+        cambio = float(valorDifi[index])-0.5
+        valorDifi[index] = ("%.1f\n" % cambio)
+
+    elif float(valorDifi[index]) < Deltha and Correct == False:
+        cambio = float(valorDifi[index]) + 0.5
+        valorDifi[index] = ("%.1f\n" % cambio)
+
+
+def CambioDiscri(index):
+
+    if float(valorDifi[index]) > Deltha and Correct == True:
+        cambio = float(valorDiscri[index])-0.1
+        valorDiscri[index] = ("%.1f\n" % cambio)
+
+    elif float(valorDifi[index]) < Deltha and Correct == False:
+        cambio = float(valorDiscri[index]) + 0.1
+        valorDiscri[index] = ("%.1f\n" % cambio)
+
+
+def PrintPregunt(idx):
+
+    index = int(idx)
+    print ("%d. %s" % (cont2, BancoPreguntas[index]))
+    print (RespuestasBanco[index])
+
+
+def VeriRespuest(Respuesta, index):
+
     entrada = Respuesta.capitalize()
 
-
-    if entrada == RespuestaCorrecta[indice]:
+    if entrada == RespuestaCorrecta[index]:
         return True
     else:
         return False
 
-def PrintPregunt(idx):
-    index = int(idx)
-    print (BancoPreguntas[index])
-    print (RespuestasBanco[index])
+
+def RangoResp(respuesta , index):
+
+    entrada = respuesta.capitalize()
+
+    if "0.25\n" == valorAzar[index]:
+        rang = ["A", "B", "C", "D"]
+        while entrada != rang[0] and entrada != rang[1] and entrada != rang[2] and entrada != rang[3]:
+            print ('Ingrese una de las opciones de respuesta\n')
+            resp = raw_input()
+            entrada = resp.capitalize()
+
+
+    elif "0.20\n" == valorAzar[index]:
+        rang = ["A", "B", "C", "D", "E"]
+        while entrada != rang[0] and entrada != rang[1] and entrada != rang[2] and entrada != rang[3] and entrada != rang[4]:
+            print ('Ingrese una de las opciones de respuesta\n')
+            resp = raw_input()
+            entrada = resp.capitalize()
+
+
+    elif "0.33\n" == valorAzar[index]:
+
+        rang = ["A", "B", "C"]
+        while entrada != rang[0] and entrada != rang[1] and entrada != rang[2]:
+            print ('Ingrese una de las opciones de respuesta\n')
+            resp = raw_input()
+            entrada = resp.capitalize()
+
+    else:
+
+        rang = ["A", "B"]
+        while entrada != rang[0] and entrada != rang[1]:
+            print ('Ingrese una de las opciones de respuesta\n')
+            resp = raw_input()
+            entrada = resp.capitalize()
+
+
+def AumentDelth(correcta, deltha):
+    if correcta == True:
+        deltha += 0.3
+    else:
+        deltha -= 0.3
+    return deltha
+
 
 archivo1 = open('Dificultades.txt', 'r')
 valorDifi = archivo1.readlines()
@@ -42,6 +115,10 @@ valorDiscri = archivo2.readlines()
 
 archivo3 = open('Azar.txt', 'r')
 valorAzar = archivo3.readlines()
+
+archivo1.close()
+archivo2.close()
+archivo3.close()
 
 BancoPreguntas = ["¿Cuál es el país con menos habitantes del mundo?\n", "¿En qué año cayó el muro de Berlín?\n",
                   "¿Cuándo empezó y terminó la Segunda Guerra Mundial?\n", "¿Cuándo murió Freddie Mercury?\n",
@@ -136,7 +213,7 @@ RespuestaCorrecta = ["A", "A", "D", "A", "C", "A", "B", "D", "E", "B",
 menu = """Bienvenido a la prueba adaptativa computarizada de cultura general. 
 
 Esta prueba se adapta a tú nivel de conocimientos!!
-Tiene un máximo de 20 preguntas, pero pueden ser menos dependiendo de tus tus respuestas y
+Tiene un máximo de 15 preguntas, pero pueden ser menos dependiendo de tus tus respuestas y
 no tiene tiempo limite.
 ¿Estas preparado para la prueba?.
 
@@ -151,77 +228,100 @@ Este es el menú de inicio.
 
 print (menu)
 
-"""opcion = input('Digita del 1 al 3 la opción que desea realizar.')"""
-"""
-if opcion == '1':
-    pass
-elif opcion == '2':
-    pass
-elif opcion == '3':
-    pass
-elif opcion == '4':
-    pass
-else:
-    print ('Debes digitar una opción entre 1 y 4')"""
+eleccion = 0
+while eleccion != '4':
 
-Deltha = 0
-difiProm = "0.0\n"
-opcion = []
-cont = 0
+    eleccion = raw_input('Digita del 1 al 4 la opción que desea realizar.\n')
+    if eleccion == '1':
 
-for j in valorDifi:
+        name = raw_input('¿Cuál es su nombre?\n')
+        cont2 = 1
+        Deltha = 0
+        difiProm = "0.0\n"
+        opcion = []
+        cont = 0
 
-    if difiProm == j:
-        opcion.append(valorDifi.index(j, cont, len(valorDifi)))
+        for j in valorDifi:
 
-    cont += 1
+            if difiProm == j:
+                opcion.append(valorDifi.index(j, cont, len(valorDifi)))
 
-opcionInicial= random.randint(0, len(opcion))
+            cont += 1
 
-PrintPregunt(opcion[opcionInicial])
-UsuarioResp = raw_input()
+        opcionInicial = random.randint(0, len(opcion))
 
-Correct = VeriRespuest(UsuarioResp, opcion[opcionInicial])
+        PrintPregunt(opcion[opcionInicial])
+        cont2 += 1
 
-if Correct == True:
-    Deltha+=0.2
-else:
-    Deltha-=0.2
+        UsuarioResp = raw_input()
+        RangoResp(UsuarioResp, opcion[opcionInicial])
+        Correct = VeriRespuest(UsuarioResp, opcion[opcionInicial])
 
-PreguntasRespond = []
-for k in range(0, 15):
+        CambioDificul(opcion[opcionInicial])
+        CambioDiscri(opcion[opcionInicial])
+        Deltha = AumentDelth(Correct, Deltha)
 
-    ResultITR = []
-    for i in range(0, len(valorDifi)):
-        ResultITR.append(itr(valorDiscri[i], valorDifi[i], valorAzar[i], Deltha))
+        PreguntasRespond = [opcion[opcionInicial]]
 
-    infoITR = []
-    for j in range(0, len(ResultITR)):
-        infoITR.append(informacionITR(ResultITR[j], valorDiscri[j], valorAzar[j]))
+        k = 0
+        finTest = False
+        while k < 14 and finTest == False:
 
-    for k in PreguntasRespond:
-        infoITR[k]=0
-    print infoITR
-    max_value = None
-    max_index = None
-    for idx, num in enumerate(infoITR):
-        if (max_value is None or num > max_value):
-            max_value = num
-            max_index = idx
+            ResultITR = []
+            infoITR = []
 
-    PreguntasRespond.append(max_index)
-    PrintPregunt(max_index)
+            for i in range(0, len(valorDifi)):
+                ResultITR.append(itr(valorDiscri[i], valorDifi[i], valorAzar[i], Deltha))
 
-    UsuarioResp = raw_input()
-    Correct = VeriRespuest(UsuarioResp, max_index)
+            for j in range(0, len(ResultITR)):
+                infoITR.append(informacionITR(ResultITR[j], valorDiscri[j], valorAzar[j]))
 
-    if Correct == True:
-        Deltha+=0.2
+            for s in PreguntasRespond:
+                infoITR[s] = 0
+
+            max_value = None
+            max_index = None
+            for idx, num in enumerate(infoITR):
+
+                if (max_value is None or num > max_value):
+                    max_value = num
+                    max_index = idx
+
+            PreguntasRespond.append(max_index)
+            PrintPregunt(max_index)
+            cont2 += 1
+
+            UsuarioResp = raw_input()
+            RangoResp(UsuarioResp, max_index)
+            Correct = VeriRespuest(UsuarioResp, max_index)
+
+            CambioDificul(max_index)
+            CambioDiscri(max_index)
+            Deltha = AumentDelth(Correct, Deltha)
+
+            if (Deltha > 3.5) or (Deltha < -3.5) or (-2.7 < Deltha < -2 and k >= 10) or (
+                    2.7 > Deltha > 2 and k >= 10) or \
+                    (k == 12 and (Deltha >= 1.5 or Deltha <= -1.5)):
+                finTest = True
+
+            k += 1
+
+        Level = int(Deltha) + 4
+        print ("siendo 1 el más bajo y 7 el más alto")
+        print ("Su nivel de cultura general es:  %d\n" % Level)
+
+        archivo1 = open('Dificultades.txt', 'w')
+        archivo2 = open('Discriminante.txt', 'w')
+        archivo1_contents = "".join(valorDifi)
+        archivo1_contents = "".join(valorDifi)
+
+
+    elif eleccion == '2':
+        print ('puntuaciones')
+    elif eleccion == '3':
+        print ('info')
+    elif eleccion == '4':
+        print ('Salir')
     else:
-        Deltha-=0.2
+        print ('Debes digitar una opción entre 1 y 4')
 
-    print Deltha
-
-archivo1.close()
-archivo2.close()
-archivo3.close()
