@@ -22,6 +22,11 @@ def informacionITR(resulItr, dis, azar):
     info = (pow(a, 2))*((1-itr)/itr)*pow((itr-c)/(1-c), 2)
     return info
 
+def GuardarCambios(archivo, valores):
+    archivo1 = open(archivo, 'w')
+    archivo1_contents = "".join(valores)
+    archivo1.write(archivo1_contents)
+    archivo1.close()
 
 def CambioDificul(index):
 
@@ -309,15 +314,23 @@ while eleccion != '4':
         Level = int(Deltha) + 4
         print ("siendo 1 el más bajo y 7 el más alto")
         print ("Su nivel de cultura general es:  %d\n" % Level)
+        """
 
-        archivo1 = open('Dificultades.txt', 'w')
-        archivo2 = open('Discriminante.txt', 'w')
-        archivo1_contents = "".join(valorDifi)
-        archivo1_contents = "".join(valorDifi)
-
+        GuardarCambios('Dificultades.txt', valorDifi)
+        GuardarCambios('Discriminante.txt', valorDiscri)
+        """
+        archivo4 = open('puntuaciones.txt', 'a')
+        infoparti = ("%s\t\t%d\n" % (name, Level))
+        archivo4.write(infoparti)
+        archivo4.close()
 
     elif eleccion == '2':
-        print ('puntuaciones')
+
+        my_puntuacion = open('puntuaciones.txt')
+        puntuaciones = my_puntuacion.read()
+        my_puntuacion.close()
+
+        print (puntuaciones)
     elif eleccion == '3':
         print ('info')
     elif eleccion == '4':
