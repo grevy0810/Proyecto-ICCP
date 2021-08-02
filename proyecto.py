@@ -1,8 +1,8 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+
 
 import math
 import random
+import os
 
 
 def itr(dis, dif, azar, x):
@@ -15,6 +15,7 @@ def itr(dis, dif, azar, x):
 
 
 def informacionITR(resulItr, dis, azar):
+
     itr = float(resulItr)
     a = float(dis)
     c = float(azar)
@@ -69,7 +70,7 @@ def VeriRespuest(Respuesta, index):
         return False
 
 
-def RangoResp(respuesta , index):
+def RangoResp(respuesta, index):
 
     entrada = respuesta.capitalize()
 
@@ -113,6 +114,9 @@ def AumentDelth(correcta, deltha):
         deltha -= 0.3
     return deltha
 
+def limpiar():
+    os.system("cls")
+
 
 archivo1 = open('Dificultades.txt', 'r')
 valorDifi = archivo1.readlines()
@@ -127,87 +131,89 @@ archivo1.close()
 archivo2.close()
 archivo3.close()
 
-BancoPreguntas = ["¿Cuál es el país con menos habitantes del mundo?\n", "¿En qué año cayó el muro de Berlín?\n",
-                  "¿Cuándo empezó y terminó la Segunda Guerra Mundial?\n", "¿Cuándo murió Freddie Mercury?\n",
-                  "¿Cuál es el himno de la Unión Europea?\n", "¿Cuál es el atleta con más medallas olímpicas?\n",
-                  "¿Cuál fue la primera civilización humana?\n","¿Qué religión tiene la Torá como su libro sagrado?\n",
-                  "¿Cuál es la luna más grande de Saturno?\n","¿Cuál es el animal más rápido?\n",
-                  "¿Qué enfermedad provocó la muerte de Stephen Hawking?\n","¿Cuántos corazones tiene un gusano de tierra?\n",
-                  "¿Cuánto duró “La Guerra de los Cien Años”?\n","¿Quién descubrió la penicilina?\n",
-                  "¿Qué país tiene el mejor sistema sanitario del mundo?\n","¿Cuál es la serpiente más larga del mundo?\n",
-                  "¿Qué río atraviesa la ciudad de Benarés, en la India?\n","¿Cuál es el primer libro de la biblia?\n",
-                  "¿Gracias a qué ganó Albert Einstein el Premio Nobel?\n","¿Cuál es la universidad más antigua del mundo?\n",
-                  "¿Cuál es la edad del Universo?\n","¿Cuál es la obra de arte más cara jamás vendida?\n",
-                  "¿Cuál es el nombre del pintor de la obra \"La Gioconda\"\n?","¿En qué año el ser humano llegó al espacio?\n",
-                  "¿Qué animal contagió a los humanos en la pandemia de peste negra?\n","¿Cuándo se extinguieron los dinosaurios?\n",
-                  "¿Cuál es la estrella más cercana al Sol?\n","¿Qué pigmento da color a nuestra piel?\n",
-                  "¿Qué volcán sepultó la ciudad de Pompeya?\n","¿Cuántas peliculas tiene la serie \"Harry Potter\"?\n",
-                  "¿De qué país es originario el queso brie?\n","¿En qué año se estableció la compañía Heinz?\n",
-                  "¿Cuál es la capital de Islandia?\n","¿En qué año murió Margaret Thatcher?\n",
-                  "¿Cuántas válvulas tiene el corazón?\n","Por lo general, ¿cuál es el músculo más fuerte en el cuerpo humano?\n",
-                  "¿Cuál de estos países no tiene litoral en Europa?\n","¿Quién es el líder espiritual más alto del Tíbet?\n",
-                  "¿Cómo se llamaba la ciudad turca de Estambul antes de 1930?\n","¿Cuál es la capital de Nueva Zelanda?\n",
-                  "En la rodilla se encuentra el ligamento cruzado. ¿Verdadero o falso?\n","¿Cuál es la moneda de Dinamarca?\n",
-                  "¿En qué país europeo encontrarías el Rijksmuseum?\n","Según la leyenda, ¿cómo murió el Papa Adriano IV en 1159?\n",
-                  "¿Qué significa “palimpsesto”?\n","¿Por qué es reconocido Serguéi Rajmáninov?\n",
-                  "¿Qué parte del cuerpo produce insulina?\n","¿Qué animal es la drosophila?\n",
-                  "¿Cuántas sílabas forman un haiku?\n","¿Cuál de estos países no tiene frontera con Brasil?\n",
-                  "¿en qué deporte el juego interrumpido se reanuda con un \"scrum\"?\n","¿quién era el padre de los dioses en la mitología nórdica?\n",
-                  "El precuneo se encuentra en el lóbulo parietal superior. ¿Verdadero o Falso?\n"]
 
-RespuestasBanco = ["A. La Ciudad del Vaticano.\n""B. San marino.\n""C. Mónaco.\n""D. Nauru.\n",
-                   "A. En 1989.\n""B. En 1980.\n""C. En 1990\n""D. En 1987.\n",
-                   "A. De 1914 a 1918.\n""B. De 1937 a 1943.\n""C. De 1917 a 1922.\n""D. De 1939 a 1945.\n",
-                   "A. En el año 1991.\n""B. En el año 1990.\n""C. En el año 1992.\n""D. En el año 1994.\n",
-                   "A. Fur Elise.\n""B. Mollys Abschied.\n""C. Oda a la Alegría.\n""D. Urians Reise\n",
-                   "A. Michael Phelps.\n""B. Larisa Latynina.\n""C. Usain Bolt.\n""D. Paavo Nurmi.\n",
-                   "A.La civilización Egipcia.\n""B.La civilización sumeria.\n""C.La civilización China.\n""D.La civilización persa.\n",
-                   "A. El hinduismo.\n""B. El budismo.\n""C. El cristianismo.\n""D. El judaísmo.\n",
-                   "A. Mimas.\n""B. Encélado.\n""C. Tetis.\n""D. Dione.\n""E. Titán.\n",
-                   "A. El Guepardo Chita.\n""B. El halcón peregrino.\n""C. El Tiburón Mako.\n""D. La tortuga.\n",
-                   "A. Esclerosis Lateral Amiotrófica.\n""B. Parkinson.\n""C. Cáncer.\n""D. Sida.\n",
-                   "A. No tiene.\n""B. Cinco.\n""C. Tres.\n""D. Uno.\n",
-                   "A. 50 años.\n""B. 90 años.\n""C. 116 años.\n""D. 99 años.\n",
-                   "A. Marie Curie.\n""B. Charles Darwin.\n""C. Leonardo Da Vinci.\n""D. Alexander Fleming.\n",
-                   "A. Francia.\n""B. Colombia.\n""C. Honduras.\n""D. Estados Unidos.\n",
-                   "A. La Boa constrictor.\n""B. La pitón reticulada.\n""C. La Cobra Real.\n""D. Serpiente Cascabel.\n",
-                   "A. El Río Amazonas.\n""B. El Río Nilo.\n""C. El río Ganges.\n""D. El Río Magdalena.\n",
-                   "A. El libro de Levítico.\n""B. El libro de Números.\n""C. El libro de Éxodo.\n""D. El libro de Génesis.\n",
-                   "A. Por la ley del efecto fotoeléctrico.\n""B. Por el movimiento Browniano\n""C. Por ea relatividad especial.\n",
-                   "A. La Universidad de Stanford\n""B. La Universidad de Bolonia.\n""C. La Universidad de Oxford.\n",
-                   "A. 10 millones de años.\n""B. 5.000 millones de años.\n""C. 13.800 millones de años.\n""D. 7.000 millones de años.\n",
-                   "A. La Gioconda.\n""B. La última cena.\n""C. La noche estrellada.\n""D. Salvator Mundi.\n",
-                   "A. Leonardo da Vinci.\n""B. Pablo Picasso.\n""C. Rembrandt.\n""D. Diego Velázquez.\n",
-                   "A. En 2001.\n""B. En 1961.\n""C. En 1990.\n""D. En 1972.\n",
-                   "A. Las Ratas.\n""B. Los Cerdos.\n""C. Las pulgas.\n""D. Los Murcielagos.\n",
-                   "A. Hace 20 millones de años.\n""B. Hace 7 millones de años.\n""C. Hace 4 millones de años.\n""D. Hace 66 millones de años.\n",
-                   "A. Alfa Centauri.\n""B. Sirio.\n""C. Pólux.\n""D. Rigel.\n",
-                   "A. La clorofila.\n""B. La melanina.\n""C. La bilirrubina.\n""D. La hemocianina.\n",
-                   "A. El Krakatoa.\n""B. El Merapi.\n""C. El Vesubio.\n",
-                   "A. 3 películas.\n""B. 4 películas.\n""C. 5 películas.\n""D. 8 películas.\n",
-                   "A. Francia.\n""B. Alemania.\n""C. Noruega.\n""D. España.\n",
-                   "A. 1869.\n""B. 1890.\n""C. 1894.\n""D. 1860.\n",
-                   "A. Oslo.\n""B. Reikiavik.\n""C. Ámsterdam.\n""D. Madrid.\n",
-                   "A. 2000.\n""B. 2002.\n""C. 2013.\n""D. 2007.\n",
-                   "A. Cinco.\n""B. Dos.\n""C. Tres.\n""D. Cuatro.\n",
-                   "A. El masetero (mandíbula principal).\n""B. Los Pectorales.\n""C. El Tríceps.\n""D. El Biceps.\n",
-                   "A. España.\n""B. Andorra.\n""C. Grecia.\n""D. Italia.\n",
-                   "A. El Thich Nhat Hanh.\n""B. El papa Francisco.\n""C. El Dalai Lama.\n""D. Martín Lutero.\n",
-                   "A. Damasco.\n""B. Jerusalén.\n""C. Babilonia.\n""D. Constantinopla.\n",
-                   "A. Wellington.\n""B. Riad.\n""C. Buenos Aires.\n""D. Argel.\n",
-                   "A. Verdadero.\n""B. Falso.\n",
-                   "A. Franco.\n""B. Krone.\n""C. Yen.\n""D. Libra esterlina.\n",
-                   "A. Grecia.\n""B. Suiza.\n""C. Paises Bajos.\n""D. Portugal.\n",
-                   "A. Tragándose una mosca.\n""B. Cayéndose de un balcón.\n""C. Chocándose contra una puerta.\n""D. Cayéndose de un caballo.\n",
-                   "A. Un personaje que carece de seriedad.\n""B. Razonamiento por el que la verdad de una proposición se prueba demostrando la imposibilidad o absurdo de la proposición contraria.\n""C. Algo que sirve como ayuda auxiliar.\n""D. Manuscrito cuya escritura ha sido eliminada con objeto de escribir otro texto encima.\n",
-                   "A. Por sus contribuciones al mundo de la física cuántica.\n""B. Por sus contribuciones al mundo de la música.\n""C. Por sus contribuciones al mundo de la pintura.\n""D. Por sus contribuciones al mundo de la literatura.\n",
-                   "A. El páncreas.\n""B. El hígado.\n""C. El bazo.\n""D. El timo.\n",
-                   "A. Una rata.\n""B. Una mosca.\n""C. Un conejillo de Indias.\n""D. Una cabra.\n",
-                   "A. 14.\n""B. 15.\n""C. 16.\n""D. 17.\n",
-                   "A. Surinam.\n""B. Chile.\n""C. Uruguay.\n""D. Bolivia.\n",
-                   "A. hockey.\n""B. rugby.\n""C. béisbol.\n""D. waterpolo.\n",
-                   "A. thor.\n""B. loki.\n""C. odin.\n""D. balder.\n",
-                   "A. Verdadero.\n""B. Falso.\n"]
+
+BancoPreguntas = [("%cCu%cl es el pa%cs con menos habitantes del mundo?\n" % (168, 160, 161)), ("%cEn qu%c a%co cay%c el muro de Berl%cn?\n" % (168, 130, 164, 162, 161)),
+                  ("%cCu%cndo empez%c y termin%c la Segunda Guerra Mundial?\n" % (168, 160, 162, 162)), ("%cCu%cndo muri%c Freddie Mercury?\n" % (168, 160, 162)),
+                  ("%cCu%cl es el himno de la Uni%cn Europea?\n" % (168, 160, 162)), ("%cCu%cl es el atleta con m%cs medallas ol%cmpicas?\n" % (168, 160, 160, 161)),
+                  ("%cCu%cl fue la primera civilizaci%cn humana?\n" % (168, 160, 162)), ("%cQu%c religi%cn tiene la Tor%c como su libro sagrado?\n" % (168, 130, 162, 160)),
+                  ("%cCu%cl es la luna m%cs grande de Saturno?\n" % (168, 160, 160)), ("%cCu%cl es el animal m%cs r%cpido?\n" % (168, 160, 160, 160)),
+                  ("%cQu%c enfermedad provoc%c la muerte de Stephen Hawking?\n" % (168, 130, 162)), ("%cCu%cntos corazones tiene un gusano de tierra?\n" % (168, 160)),
+                  ("%cCu%cnto dur%c \"La Guerra de los Cien A%cos\"?\n" % (168, 160, 162, 164)), ("%cQui%cn descubri%c la penicilina?\n" % (168, 130, 162)),
+                  ("%cQu%c pa%cs tiene el mejor sistema sanitario del mundo?\n" % (168, 130, 161)), ("%cCu%cl es la serpiente m%cs larga del mundo?\n" % (168, 160, 160)),
+                  ("%cQu%c r%co atraviesa la ciudad de Benar%cs, en la India?\n" % (168, 130, 161, 130)), ("%cCu%cl es el primer libro de la biblia?\n" % (168, 160)),
+                  ("%cGracias a qu%c gan%c Albert Einstein el Premio Nobel?\n" % (168, 130, 162)), ("%cCu%cl es la universidad m%cs antigua del mundo?\n" % (168, 160, 160)),
+                  ("%cCu%cl es la edad del Universo?\n" % (168, 160)), ("%cCu%cl es la obra de arte m%cs cara jam%cs vendida?\n" % (168, 160, 160, 160)),
+                  ("%cCu%cl es el nombre del pintor de la obra \"La Gioconda\"\n?" % (168, 160)), ("%cEn qu%c a%co el ser humano lleg%c al espacio?\n" % (168, 130, 164, 162)),
+                  ("%cQu%c animal contagi%c a los humanos en la pandemia de peste negra?\n" % (168, 130, 162)), ("%cCu%cndo se extinguieron los dinosaurios?\n" % (168, 160)),
+                  ("%cCu%cl es la estrella m%cs cercana al Sol?\n" % (168, 160, 160)), ("%cQu%c pigmento da color a nuestra piel?\n" % (168, 130)),
+                  ("%cQu%c volc%cn sepult%c la ciudad de Pompeya?\n" % (168, 130, 160, 162)), ("%cCu%cntas peliculas tiene la serie \"Harry Potter\"?\n" % (168, 160)),
+                  ("%cDe qu%c pa%cs es originario el queso brie?\n" % (168, 130, 161)), ("%cEn qu%c a%co se estableci%c la compa%c%ca Heinz?\n" % (168, 130, 164, 162, 164, 161)),
+                  ("%cCu%cl es la capital de Islandia?\n" % (168, 160)), ("%cEn qu%c a%co muri%c Margaret Thatcher?\n" % (168, 130, 164, 162)),
+                  ("%cCu%cntas v%clvulas tiene el coraz%cn?\n" % (168, 160, 160, 162)), ("Por lo general, %ccu%cl es el m%csculo m%cs fuerte en el cuerpo humano?\n" % (168, 160, 163, 160)),
+                  ("%cCu%cl de estos pa%cses no tiene litoral en Europa?\n" % (168, 160, 161)), ("%cQui%cn es el l%cder espiritual m%cs alto del T%cbet?\n" % (168, 130, 161, 160, 161)),
+                  ("%cC%cmo se llamaba la ciudad turca de Estambul antes de 1930?\n" % (168, 162)), ("%cCu%cl es la capital de Nueva Zelanda?\n" % (168, 160)),
+                  ("En la rodilla se encuentra el ligamento cruzado. %cVerdadero o falso?\n" % 168), ("%cCu%cl es la moneda de Dinamarca?\n" % (168, 160)),
+                  ("%cEn qu%c pa%cs europeo encontrar%cas el Rijksmuseum?\n" % (168, 130, 161, 161)), ("Seg%cn la leyenda, %cc%cmo muri%c el Papa Adriano IV en 1159?\n" % (163, 168, 162, 162)),
+                  ("%cQu%c significa \"palimpsesto\"?\n" % (168, 130)), ("%cPor qu%c es reconocido Sergu%ci Rajm%cninov?\n" % (168, 130, 130, 160)),
+                  ("%cQu%c parte del cuerpo produce insulina?\n" % (168, 130)), ("%cQu%c animal es la drosophila?\n" % (168, 130)),
+                  ("%cCu%cntas s%clabas forman un haiku?\n" % (168, 160, 161)), ("%cCu%cl de estos pa%cses no tiene frontera con Brasil?\n" % (168, 160, 161)),
+                  ("%cen qu%c deporte el juego interrumpido se reanuda con un \"scrum\"?\n" % (168, 130)), ("%cQui%cn era el padre de los dioses en la mitolog%ca n%crdica?\n" % (168, 130, 161, 162)),
+                  ("El precuneo se encuentra en el l%cbulo parietal superior. %cVerdadero o Falso?\n" % (162, 168))]
+
+RespuestasBanco = [("A. La Ciudad del Vaticano.\nB. San marino.\nC. M%cnaco.\nD. Nauru.\n" % 162),
+                   "A. En 1989.\nB. En 1980.\nC. En 1990\nD. En 1987.\n",
+                   "A. De 1914 a 1918.\nB. De 1937 a 1943.\nC. De 1917 a 1922.\nD. De 1939 a 1945.\n",
+                   ("A. En el a%co 1991.\nB. En el a%co 1990.\nC. En el a%co 1992.\nD. En el a%co 1994.\n" % (164, 164, 164, 164)),
+                   ("A. Fur Elise.\nB. Mollys Abschied.\nC. Oda a la Alegr%ca.\nD. Urians Reise\n" % 161),
+                   "A. Michael Phelps.\nB. Larisa Latynina.\nC. Usain Bolt.\nD. Paavo Nurmi.\n",
+                   ("A.La civilizaci%cn Egipcia.\nB.La civilizaci%cn sumeria.\nC.La civilizaci%cn China.\nD.La civilizaci%cn persa.\n" % (162, 162, 162, 162)),
+                   ("A. El hinduismo.\nB. El budismo.\nC. El cristianismo.\nD. El juda%csmo.\n" % 161),
+                   ("A. Mimas.\nB. Enc%clado.\nC. Tetis.\nD. Dione.\nE. Tit%cn.\n" % (130, 160)),
+                   ("A. El Guepardo Chita.\nB. El halc%cn peregrino.\nC. El Tibur%cn Mako.\nD. La tortuga.\n" % (162, 162)),
+                   ("A. Esclerosis Lateral Amiotr%cfica.\nB. Parkinson.\nC. C%cncer.\nD. Sida.\n" % (162, 160)),
+                   "A. No tiene.\nB. Cinco.\nC. Tres.\nD. Uno.\n",
+                   ("A. 50 a%cos.\nB. 90 a%cos.\nC. 116 a%cos.\nD. 99 a%cos.\n" % (164, 164, 164, 164)),
+                   "A. Marie Curie.\nB. Charles Darwin.\nC. Leonardo Da Vinci.\nD. Alexander Fleming.\n",
+                   "A. Francia.\nB. Colombia.\nC. Honduras.\nD. Estados Unidos.\n",
+                   ("A. La Boa constrictor.\nB. La pit%cn reticulada.\nC. La Cobra Real.\nD. Serpiente Cascabel.\n" % 162),
+                   ("A. El R%co Amazonas.\nB. El R%co Nilo.\nC. El r%co Ganges.\nD. El R%co Magdalena.\n" % (161, 161, 161, 161)),
+                   ("A. El libro de Lev%ctico.\nB. El libro de N%cmeros.\nC. El libro de %cxodo.\nD. El libro de G%cnesis.\n" % (161, 163, 144, 130)),
+                   ("A. Por la ley del efecto fotoel%cctrico.\nB. Por el movimiento Browniano\nC. Por la relatividad especial.\n" % 130),
+                   "A. La Universidad de Stanford\nB. La Universidad de Bolonia.\nC. La Universidad de Oxford.\n",
+                   ("A. 10 millones de a%cos.\nB. 5.000 millones de a%cos.\nC. 13.800 millones de a%cos.\nD. 7.000 millones de a%cos.\n" % (164, 164, 164, 164)),
+                   ("A. La Gioconda.\nB. La %cltima cena.\nC. La noche estrellada.\nD. Salvator Mundi.\n" % 163),
+                   ("A. Leonardo da Vinci.\nB. Pablo Picasso.\nC. Rembrandt.\nD. Diego Vel%czquez.\n"% 160),
+                   "A. En 2001.\nB. En 1961.\nC. En 1990.\nD. En 1972.\n",
+                   ("A. Las Ratas.\nB. Los Cerdos.\nC. Las pulgas.\nD. Los Murci%clagos.\n" % 130),
+                   ("A. Hace 20 millones de a%cos.\nB. Hace 7 millones de a%cos.\nC. Hace 4 millones de a%cos.\nD. Hace 66 millones de a%cos.\n" % (164, 164, 164, 164)),
+                   ("A. Alfa Centauri.\nB. Sirio.\nC. P%clux.\nD. Rigel.\n" % 162),
+                   "A. La clorofila.\nB. La melanina.\nC. La bilirrubina.\nD. La hemocianina.\n",
+                   "A. El Krakatoa.\nB. El Merapi.\nC. El Vesubio.\n",
+                   ("A. 3 pel%cculas.\nB. 4 pel%cculas.\nC. 5 pel%cculas.\nD. 8 pel%cculas.\n" % (161, 161, 161, 161)),
+                   ("A. Francia.\nB. Alemania.\nC. Noruega.\nD. Espa%ca.\n" % 164),
+                   "A. 1869.\nB. 1890.\nC. 1894.\nD. 1860.\n",
+                   ("A. Oslo.\nB. Reikiavik.\nC. %cmsterdam.\nD. Madrid.\n" % 143),
+                   "A. 2000.\nB. 2002.\nC. 2013.\nD. 2007.\n",
+                   "A. Cinco.\nB. Dos.\nC. Tres.\nD. Cuatro.\n",
+                   ("A. El masetero (mand%cbula principal).\nB. Los Pectorales.\nC. El Tr%cceps.\nD. El Biceps.\n" % (161, 161)),
+                   ("A. Espa%ca.\nB. Andorra.\nC. Grecia.\nD. Italia.\n"% 164),
+                   ("A. El Thich Nhat Hanh.\nB. El papa Francisco.\nC. El Dalai Lama.\nD. Mart%cn Lutero.\n" % 161),
+                   ("A. Damasco.\nB. Jerusal%cn.\nC. Babilonia.\nD. Constantinopla.\n" % 130),
+                   "A. Wellington.\nB. Riad.\nC. Buenos Aires.\nD. Argel.\n",
+                   "A. Verdadero.\nB. Falso.\n",
+                   "A. Franco.\nB. Krone.\nC. Yen.\nD. Libra esterlina.\n",
+                   "A. Grecia.\nB. Suiza.\nC. Paises Bajos.\nD. Portugal.\n",
+                   ("A. Trag%cndose una mosca.\nB. Cay%cndose de un balc%cn.\nC. Choc%cndose contra una puerta.\nD. Cay%cndose de un caballo.\n" % (160, 130, 162, 160, 130)),
+                   ("A. Un personaje que carece de seriedad.\nB. Razonamiento por el que la verdad de una proposici%cn se prueba demostrando la imposibilidad o absurdo de la proposici%cn contraria.\nC. Algo que sirve como ayuda auxiliar.\nD. Manuscrito cuya escritura ha sido eliminada con objeto de escribir otro texto encima.\n" % (162, 162)),
+                   ("A. Por sus contribuciones al mundo de la f%csica cu%cntica.\nB. Por sus contribuciones al mundo de la m%csica.\nC. Por sus contribuciones al mundo de la pintura.\nD. Por sus contribuciones al mundo de la literatura.\n" % (161, 160, 163)),
+                   ("A. El p%cncreas.\nB. El h%cgado.\nC. El bazo.\nD. El timo.\n" % (160, 161)),
+                   "A. Una rata.\nB. Una mosca.\nC. Un conejillo de Indias.\nD. Una cabra.\n",
+                   "A. 14.\nB. 15.\nC. 16.\nD. 17.\n",
+                   "A. Surinam.\nB. Chile.\nC. Uruguay.\nD. Bolivia.\n",
+                   ("A. hockey.\nB. rugby.\nC. b%cisbol.\nD. waterpolo.\n" % 130),
+                   "A. thor.\nB. loki.\nC. odin.\nD. balder.\n",
+                   "A. Verdadero.\nB. Falso.\n"]
 
 RespuestaCorrecta = ["A", "A", "D", "A", "C", "A", "B", "D", "E", "B",
                      "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
@@ -217,37 +223,34 @@ RespuestaCorrecta = ["A", "A", "D", "A", "C", "A", "B", "D", "E", "B",
                      "B", "C", "A"]
 
 
-menu = """Bienvenido a la prueba adaptativa computarizada de cultura general. 
+infoPrueba = ("""Bienvenido a la prueba adaptativa computarizada de cultura general. 
 
-Esta prueba se adapta a tú nivel de conocimientos!!
-Tiene un máximo de 15 preguntas, pero pueden ser menos dependiendo de tus respuestas y
-no tiene tiempo limite.
-¿Estas preparado para la prueba?.
+Esta prueba se adapta a t%c nivel de conocimientos!!
+Te clasifica entre 7 niveles. 
+Tiene un m%cximo de 15 preguntas, pero pueden ser menos dependiendo de tus respuestas.
 
-Este es el menú de inicio.
+%cEstas preparado para la prueba?.
 
-1. Realizar prueba.
-2. puntuaciones.
-3. Salir. 
+""" % (163, 160, 168))
 
-"""
+print (infoPrueba)
+menu = raw_input('Men%c Principal:\n\n'
+                 '1. Realizar prueba.\n'
+                 '2. puntuaciones.\n'
+                 '3. Salir. \n'
+                 'Digita del 1 al 3 la opci%cn que desea realizar.\n' % (163, 162))
 
+limpiar()
+while menu != '3':
+    if menu == '1':
 
-
-eleccion = 0
-while eleccion != '3':
-
-    print (menu)
-    eleccion = raw_input('Digita del 1 al 3 la opción que desea realizar.\n')
-    if eleccion == '1':
-
-        name = raw_input('¿Cuál es su nombre?\n')
+        name = raw_input('%cCu%cl es su nombre?\n' % (168, 160))
+        limpiar()
         cont2 = 1
         Deltha = 0
         difiProm = "0.0\n"
         opcion = []
         cont = 0
-
         for j in valorDifi:
 
             if difiProm == j:
@@ -255,12 +258,12 @@ while eleccion != '3':
 
             cont += 1
 
-        opcionInicial = random.randint(0, len(opcion))
-
+        opcionInicial = random.randint(0, len(opcion)-1)
         PrintPregunt(opcion[opcionInicial])
         cont2 += 1
 
         UsuarioResp = raw_input()
+        limpiar()
         RangoResp(UsuarioResp, opcion[opcionInicial])
         Correct = VeriRespuest(UsuarioResp, opcion[opcionInicial])
 
@@ -299,6 +302,7 @@ while eleccion != '3':
             cont2 += 1
 
             UsuarioResp = raw_input()
+            limpiar()
             RangoResp(UsuarioResp, max_index)
             Correct = VeriRespuest(UsuarioResp, max_index)
 
@@ -314,29 +318,33 @@ while eleccion != '3':
             k += 1
 
         Level = int(Deltha) + 4
-        print ("siendo 1 el más bajo y 7 el más alto")
+        print ("siendo 1 el m%cs bajo y 7 el m%cs alto\n" % (160, 160))
         print ("Su nivel de cultura general es:  %d\n" % Level)
-        """
+
 
         GuardarCambios('Dificultades.txt', valorDifi)
         GuardarCambios('Discriminante.txt', valorDiscri)
-        """
+
         archivo4 = open('puntuaciones.txt', 'a')
         infoparti = ("%s\t\t%d\n" % (name, Level))
         archivo4.write(infoparti)
         archivo4.close()
 
-    elif eleccion == '2':
+    elif menu == '2':
 
         my_puntuacion = open('puntuaciones.txt')
         puntuaciones = my_puntuacion.read()
         my_puntuacion.close()
 
+        print ('Puntuaciones:\n' )
         print (puntuaciones)
 
-    elif eleccion == '3':
-        print ('Fin del Programa. ')
     else:
-        print ('Debes digitar una opción entre 1 y 3\n')
+        print ('Debes digitar una opci%cn entre 1 y 3\n' % 162)
 
-
+    menu = raw_input('Men%c Principal:\n\n'
+                     '1. Realizar prueba.\n'
+                     '2. puntuaciones.\n'
+                     '3. Salir. \n'
+                     'Digita del 1 al 3 la opci%cn que desea realizar.\n' % (163, 162))
+    limpiar()
